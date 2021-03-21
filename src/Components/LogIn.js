@@ -4,8 +4,13 @@ import "firebase/auth";
 import firebaseConfig from './firebase.config';
 import { UserContext } from '../App';
 import { useHistory, useLocation } from 'react-router';
-   firebase.initializeApp(firebaseConfig);
+   
 const LogIn = () => {
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+ }else {
+    firebase.app(); // if already initialized, use that one
+ }
   const [loggedUser,setLoggedInUser]=useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
@@ -155,10 +160,10 @@ const LogIn = () => {
           <form action="" onSubmit={handleSubmit}>
             <input type="checkbox" onChange={()=>setnewUser(!newUser)} name="newUser" id=""/> 
             <label htmlFor="newUser">New User Sign uP</label> <br/> <br/>
-            {newUser && <input name="name" onBlur={handleChange} type="text" placeholder='your name'/>}
+            {newUser && <input style={{width:'250px',padding:"10px"}} name="name" onBlur={handleChange} type="text" placeholder='your name'/>}
           <br/> <br/>
-          <input type="text" name ="email" onBlur={handleChange} placeholder="write your email address" required /> <br/> <br/>
-          <input type="password" name="password" onBlur={handleChange} id="" placeholder="write your password" required/> <br/> <br/>
+          <input style={{width:'250px',padding:"10px"}} type="text" name ="email" onBlur={handleChange} placeholder="write your email address" required /> <br/> <br/>
+          <input style={{width:'250px',padding:"10px"}} type="password" name="password" onBlur={handleChange} id="" placeholder="write your password" required/> <br/> <br/>
           <input type="submit"class="btn btn-primary" value={newUser ? "Sign Up": "Sign In"}/>
           <br/>
 

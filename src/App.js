@@ -33,7 +33,7 @@ function App() {
             <Route path="/contact">
                 <Contact/>
             </Route>
-            <PrivateRoute path="/destination">
+            <PrivateRoute path="/destination/:abc">
                 <Destination/>
             </PrivateRoute>
             <Route path="/blog">

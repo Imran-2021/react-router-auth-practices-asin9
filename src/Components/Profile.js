@@ -10,7 +10,6 @@ const Profile = () => {
             <h4>hello ,<span style={{color:'red'}}>{loggedUser.name|| loggedUser.displayName}</span></h4>
             <h2>Enjoy the jorney !!</h2>
            <br/>
-                <Link className="nav-link btn btn-dark"style={{width:'400px',marginLeft:'30%'}} to="/destination"> See your Destination</Link>
             
         </div>
     );

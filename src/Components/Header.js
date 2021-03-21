@@ -13,7 +13,7 @@ const Header = () => {
                 <Link className="nav-link" to="/blog">Blog</Link>
             </li>
             <li class="nav-item">
-                <Link className="nav-link" to="/destination">Destination</Link>
+                <Link className="nav-link" to='/home'>Destination</Link>
             </li>
             {loggedUser.name|| loggedUser.displayName ? <li class="nav-item">
                 <Link class="btn btn-primary" className="nav-link" onClick={()=>setLoggedInUser({})} to="/contact">Log Out</Link>
